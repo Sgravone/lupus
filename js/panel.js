@@ -27,7 +27,8 @@ function stopTimer() {
 }
 
 function updateTimerDisplay() {
-  $("timer-display").textContent = formatSeconds(state.timerSeconds);
+  const display = $("timer-display");
+  if (display) display.textContent = formatSeconds(state.timerSeconds);
 }
 
 
@@ -138,8 +139,10 @@ async function fetchRoomState() {
       if (state.phase === "night") {
         renderNightActions(room);
       } else {
-        $("night-actions-container").innerHTML = "";
-        $("night-result-label").textContent = "";
+        const nightContainer = $("night-actions-container");
+        const nightLabel = $("night-result-label");
+        if (nightContainer) nightContainer.innerHTML = "";
+        if (nightLabel) nightLabel.textContent = "";
       }
     }
 

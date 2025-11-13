@@ -30,10 +30,10 @@ $room = [
             'isMaster' => true
         ]
     ],
-    'rolesConfig'       => new stdClass(), // configurazione ruoli
-    'assignments'       => new stdClass(), // playerId -> roleId
-    'playerStatus'      => new stdClass(), // playerId -> 'alive' | 'dead'
-    'witchLastTargetId' => null            // chi ha protetto la strega l’ultima notte
+    'rolesConfig'       => [],   // configurazione ruoli
+    'assignments'       => [],   // playerId -> roleId
+    'playerStatus'      => [],   // playerId -> 'alive' | 'dead'
+    'witchLastTargetId' => null  // chi ha protetto la strega l'ultima notte
 ];
 
 // Salva su disco

@@ -7,7 +7,12 @@ function renderNightActions(room) {
 
   container.innerHTML = "";
 
-  if (!state.isMaster || state.phase !== "night") {
+  if (!state.isMaster) {
+    container.innerHTML = `<span class="tiny">Solo il master può vedere questa sezione.</span>`;
+    return;
+  }
+
+  if (state.phase !== "night") {
     container.innerHTML = `<span class="tiny">Non sei in fase Notte.</span>`;
     return;
   }

@@ -299,17 +299,13 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!state.isMaster) return;
     state.masterPanelOpen = true;
     state.screenLocked = true;
-$("master-panel-wrapper").classList.remove("hidden");
-state.masterPanelOpen = true;
-
+    $("master-panel-wrapper").classList.remove("hidden");
   };
 
   $("btn-close-master-panel").onclick = () => {
     state.masterPanelOpen = false;
     state.screenLocked = false;
-$("master-panel-wrapper").classList.add("hidden");
-state.masterPanelOpen = false;
-
+    $("master-panel-wrapper").classList.add("hidden");
   };
 
   // ---------------------------------------
@@ -324,7 +320,7 @@ state.masterPanelOpen = false;
     // Chiudi pannello, la logica interna passa già a "day"
     state.masterPanelOpen = false;
     state.screenLocked = false;
-    $("master-panel-wrapper").style.display = "none";
+    $("master-panel-wrapper").classList.add("hidden");
 
     // Aggiornamento stato/tema
     state.phase = "day";
@@ -343,7 +339,8 @@ state.masterPanelOpen = false;
   };
 
   $("btn-day-deaths-close").onclick = () => {
-    $("day-deaths-overlay").style.display = "none";
+    const overlay = $("day-deaths-overlay");
+    if (overlay) overlay.style.display = "none";
   };
 
   $("btn-day-deaths-confirm").onclick = async () => {

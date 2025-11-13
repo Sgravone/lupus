@@ -234,7 +234,8 @@ function updatePhaseLabel() {
   else if (state.phase === "day") text = "Fase: Giorno.";
   else if (state.phase === "night") text = "Fase: Notte.";
 
-  $("phase-label").textContent = text;
+  const phaseLabel = $("phase-label");
+  if (phaseLabel) phaseLabel.textContent = text;
 
   const btnNight = $("btn-night-resolve");
   const btnDay = $("btn-day-mark-deaths");

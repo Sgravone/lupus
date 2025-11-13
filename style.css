@@ -24,6 +24,16 @@ body {
 .small { font-size: 14px; opacity: 0.9; }
 .tiny  { font-size: 12px; opacity: 0.8; }
 
+.status {
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 13px;
+  color: #ffeccc;
+  min-height: 20px;
+}
+
 /* =====================================================
    CARD
 ===================================================== */
@@ -96,6 +106,26 @@ button.small {
   margin: 18px 0;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-display {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffeccc;
+}
+
+.timer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
 /* =====================================================
    PILL & BADGE
 ===================================================== */
@@ -106,10 +136,18 @@ button.small {
   border-radius: 20px;
   margin-right: 6px;
   font-size: 12px;
+  display: inline-block;
 }
 
 .pill-outline {
   border: 1px solid #888;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
 }
 
 .badge-master {
@@ -118,6 +156,37 @@ button.small {
   border-radius: 6px;
   font-size: 12px;
   margin-left: 6px;
+}
+
+/* =====================================================
+   MODE PILLS
+===================================================== */
+
+.mode-pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.mode-pill {
+  padding: 8px 14px;
+  background: #444;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.mode-pill:hover {
+  background: #555;
+}
+
+.mode-pill-active {
+  background: #5a3e2b;
+  border-color: #7a5b40;
+  color: #fff3d8;
 }
 
 /* =====================================================
@@ -244,6 +313,9 @@ button.small {
   height: 100%;
   background: rgba(0,0,0,0.65);
   display: none;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
 }
 
 #day-deaths-modal {
@@ -251,37 +323,87 @@ button.small {
   padding: 18px;
   border-radius: 10px;
   width: 90%;
+  max-width: 500px;
   margin: 120px auto;
+}
+
+.day-deaths-list {
+  margin: 12px 0;
+}
+
+.day-deaths-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #3a3a3a;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.day-deaths-item:hover {
+  background: #424242;
+}
+
+.day-deaths-name {
+  font-size: 14px;
+}
+
+.day-deaths-check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.day-deaths-check.checked {
+  background: #d44444;
+  border-color: #d44444;
+}
+
+.day-deaths-check.checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* =====================================================
    TEMA GIORNO/NOTTE
 ===================================================== */
 
-body.day-mode {
+body.day-theme {
   background: #f4f0e5;
   color: #2a2a2a;
 }
 
-body.day-mode .card {
+body.day-theme .card {
   background: #ffffff;
   color: #1a1a1a;
 }
 
-body.day-mode button {
+body.day-theme button {
   background: #c7a887;
   color: #3b2920;
 }
 
-body.day-mode .role-chip {
+body.day-theme .role-chip {
   background: #f3eadb;
 }
 
-body.day-mode .role-chip-body {
+body.day-theme .role-chip-body {
   background: #efe8dc;
 }
 
-body.day-mode input {
+body.day-theme input {
   background: #fff;
   color: #333;
 }

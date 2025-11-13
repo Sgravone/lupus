@@ -4,6 +4,8 @@
 function openDayDeathsOverlay(room) {
   const overlay = $("day-deaths-overlay");
   const list = $("day-deaths-list");
+  if (!overlay || !list) return;
+
   list.innerHTML = "";
 
   const players = (room.players || []).filter(p => !p.isMaster);
@@ -43,6 +45,8 @@ function openDayDeathsOverlay(room) {
 
 async function confirmDayDeaths(room) {
   const list = $("day-deaths-list");
+  if (!list) return;
+
   const items = Array.from(list.querySelectorAll(".day-deaths-item"));
 
   let newStatus = { ...state.playerStatus };
@@ -68,5 +72,6 @@ async function confirmDayDeaths(room) {
     },
   });
 
-  $("day-deaths-overlay").style.display = "none";
+  const overlay = $("day-deaths-overlay");
+  if (overlay) overlay.style.display = "none";
 }
