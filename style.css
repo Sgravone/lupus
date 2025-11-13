@@ -1,0 +1,287 @@
+/* =====================================================
+   RESET & BASE
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+.small { font-size: 14px; opacity: 0.9; }
+.tiny  { font-size: 12px; opacity: 0.8; }
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+  background: #2a2a2a;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* =====================================================
+   INPUT + BOTTONI
+===================================================== */
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 12px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background: #f7f3e7;
+  color: #333;
+}
+
+/* BOTTONI LEGNO */
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  background: #5a3e2b;
+  color: #fff3d8;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.6);
+  transition: 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* BOTTONI SECONDARI */
+
+button.secondary {
+  background: #7a5b40;
+}
+
+button.small {
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* =====================================================
+   TITOLI & SEZIONI
+===================================================== */
+
+.section-title {
+  font-weight: bold;
+  margin: 10px 0 6px 0;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 18px 0;
+}
+
+/* =====================================================
+   PILL & BADGE
+===================================================== */
+
+.pill {
+  padding: 4px 10px;
+  background: #444;
+  border-radius: 20px;
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.pill-outline {
+  border: 1px solid #888;
+}
+
+.badge-master {
+  background: #d44444;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* =====================================================
+   ROLE CHIP (Lista ruoli)
+===================================================== */
+
+.role-chip {
+  background: #363636;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.role-chip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role-chip-title {
+  font-weight: bold;
+}
+
+.role-chip-toggle {
+  font-size: 14px;
+  padding: 4px 8px;
+  background: #555;
+  border-radius: 6px;
+}
+
+.role-chip-body {
+  margin-top: 8px;
+  background: #2b2b2b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* =====================================================
+   RUOLI – CONTATORI (- 3 +)
+===================================================== */
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.role-counter-btn {
+  width: auto !important;
+  padding: 6px 12px;
+  font-size: 18px;
+  margin: 0 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #5a3e2b;
+  color: #ffeccc;
+  border-radius: 8px;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.6);
+}
+
+.role-counter-btn:active {
+  transform: scale(0.94);
+}
+
+.role-qty-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* =====================================================
+   LISTA GIOCATORI
+===================================================== */
+
+.players-list-item {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.player-dead-label {
+  color: #d44444;
+}
+
+/* =====================================================
+   PANNELLO MASTER
+===================================================== */
+
+#master-panel-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 90%;
+  overflow-y: auto;
+  background: #2b2b2b;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.6);
+}
+
+#master-panel-inner {
+  padding-bottom: 30px;
+}
+
+#master-panel-drag {
+  width: 50px;
+  height: 5px;
+  background: #666;
+  margin: 0 auto 10px auto;
+  border-radius: 4px;
+}
+
+/* =====================================================
+   OVERLAY MORTI DEL GIORNO
+===================================================== */
+
+#day-deaths-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: none;
+}
+
+#day-deaths-modal {
+  background: #2f2f2f;
+  padding: 18px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 120px auto;
+}
+
+/* =====================================================
+   TEMA GIORNO/NOTTE
+===================================================== */
+
+body.day-mode {
+  background: #f4f0e5;
+  color: #2a2a2a;
+}
+
+body.day-mode .card {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+body.day-mode button {
+  background: #c7a887;
+  color: #3b2920;
+}
+
+body.day-mode .role-chip {
+  background: #f3eadb;
+}
+
+body.day-mode .role-chip-body {
+  background: #efe8dc;
+}
+
+body.day-mode input {
+  background: #fff;
+  color: #333;
+}
